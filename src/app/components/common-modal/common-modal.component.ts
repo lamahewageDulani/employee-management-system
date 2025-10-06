@@ -11,6 +11,7 @@ export class CommonModalComponent {
   @Input() title: string = '';
   @Input() showSave: boolean = true;
   @Input() visible: boolean = false;   // control modal open/close
+  @Input() disableSave = false;
   @Output() save = new EventEmitter<void>();
   @Output() close = new EventEmitter<void>();
 

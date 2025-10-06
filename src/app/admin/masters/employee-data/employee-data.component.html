@@ -8,11 +8,12 @@
   </div>
 
   <app-common-modal
-    title="Add / Update Employee"
+    title="Add Employee"
     [visible]="showEmployeeModal"
     (save)="saveEmployee()"
     (close)="showEmployeeModal=false"
-    [showSave]="true">
+    [showSave]="true"
+    [disableSave]="!addEmployeeForm.isFormValid">
 
     <!-- Use the separate component here -->
     <app-add-employee></app-add-employee>

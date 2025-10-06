@@ -9,7 +9,7 @@
         <ng-content></ng-content>
       </div>
       <div class="modal-footer">
-        <button *ngIf="showSave" type="button" class="btn btn-primary" (click)="onSave()">Save</button>
+        <button *ngIf="showSave" [disabled]="disableSave" type="button" class="btn btn-primary" (click)="onSave()">Save</button>
         <button type="button" class="btn btn-secondary" (click)="onClose()">Close</button>
       </div>
     </div>

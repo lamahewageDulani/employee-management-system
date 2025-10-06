@@ -14,6 +14,7 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 export class EmployeeDataComponent {
 
+  @ViewChild(AddEmployeeComponent) addEmployeeForm!: AddEmployeeComponent;
   showEmployeeModal = false;
 
   openAddModal() {
@@ -22,8 +23,11 @@ export class EmployeeDataComponent {
   }
 
   saveEmployee() {
-    console.log('Saving employee...');
-    // you can access AddEmployeeComponent data later using @ViewChild
-    this.showEmployeeModal = false;
+    if (this.addEmployeeForm.isFormValid) {
+      console.log('Saving employee...', this.addEmployeeForm.getFormData());
+      this.showEmployeeModal = false;
+    } else {
+      console.log('Form is invalid. Please correct the errors.');
+    }
   }
 }
