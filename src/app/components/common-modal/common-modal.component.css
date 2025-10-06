@@ -1,0 +1,4 @@
+.modal-content {
+  max-height: 80vh; /* Fixed height relative to screen */
+  overflow-y: auto; /* Scroll inside modal if content exceeds */
+}
