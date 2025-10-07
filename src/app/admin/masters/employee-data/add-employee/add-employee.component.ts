@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   templateUrl: './add-employee.component.html',
   styleUrl: './add-employee.component.css'
 })
+
 export class AddEmployeeComponent implements OnInit {
 
   employeeForum!: FormGroup;
@@ -19,12 +20,12 @@ export class AddEmployeeComponent implements OnInit {
 
   ngOnInit(): void {
     this.employeeForum = this.fb.group({
-      firstName: ['', Validators.required, Validators.maxLength(50)],
-      lastName: ['', Validators.required, Validators.maxLength(50)],
-      email: ['',Validators.email , Validators.maxLength(50)],
-      contactNo: ['', Validators.required, Validators.pattern("^\d{10}$")],
-      city: ['', Validators.maxLength(50)],
-      address: ['', Validators.maxLength(50)]
+      firstName: ['', [Validators.required, Validators.maxLength(50)]],
+      lastName: ['', [Validators.required, Validators.maxLength(50)]],
+      email: ['',[Validators.email , Validators.maxLength(50)]],
+      contactNo: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
+      city: ['', [Validators.maxLength(50)]],
+      address: ['', [Validators.maxLength(50)]]
     });
   }
 

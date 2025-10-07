@@ -13,7 +13,7 @@
     (save)="saveEmployee()"
     (close)="showEmployeeModal=false"
     [showSave]="true"
-    [disableSave]="!addEmployeeForm.isFormValid">
+    [disableSave]="!addEmployeeForm?.isFormValid">
 
     <!-- Use the separate component here -->
     <app-add-employee></app-add-employee>
